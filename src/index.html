@@ -239,6 +239,12 @@
     <script>
         // add your javascript code here!!
         // THIS IS FOR ISSUE #1
+        // I have given some logic for example
+        const addBox = document.querySelector('.add-box'), titleEl = document.querySelector('input'), popupBox = document.querySelector('.popup-box');
+        addBox.addEventListener('click', () => {
+            titleEl.focus();
+            popupBox.classList.add('show')
+        });
     </script>
 
 </body>

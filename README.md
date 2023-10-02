@@ -32,6 +32,7 @@ Note: <i>This repository is created with the sole intent of guiding beginners to
 ## How to Contribute?
 
 We appreciate all kinds of contributions from core-code contributions to non-code contributions like writing a blog, suggesting a feature, etc.
+<br/>
 All the code should be kept inside [index.html](src/index.html) !! Don't form separate css and js files. <br/>
 Please refer the [Contributing Guide](CONTRIBUTING.md) to know more about the guidelines.
 

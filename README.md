@@ -5,7 +5,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" height="50px" />
 </a>&nbsp; &nbsp; &nbsp;
 <a href="https://www.linkedin.com/company/decoderscommunity">
-  <img src="https://raw.githubusercontent.com/alexnaiman/alexnaiman/master/resources/linkedin.webp" height="50px" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/LinkedIn_icon_circle.svg" height="50px" />
 </a>&nbsp; &nbsp; &nbsp;
 <a href="https://instagram.com/decoderscommunity">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/CIS-A2K_Instagram_Icon_%28Pink%29.svg/640px-CIS-A2K_Instagram_Icon_%28Pink%29.svg.png" height="50px" />

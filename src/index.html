@@ -180,7 +180,7 @@
             font-size: 17px;
             padding: 0 15px;
             border-radius: 4px;
-            border: 1px solid #999;
+            border: 1px solid #d60fe8;
         }
 
         .content form textarea {
@@ -199,12 +199,168 @@
             font-size: 17px;
             background: var(--primaryColor);
         }
+
+        /* Styling the "Add Note" button .*/
+        .add-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: #3ab753;
+            color: #ecbbbb;
+            border: none;
+            border-radius: 5px;
+            padding: 20px;
+            transition: background-color 0.2s ease;
+        }
+
+        .add-box:hover {
+            background: #b55e1f;
+        }
+
+        .add-box .icon {
+            height: 88px;
+            width: 88px;
+            font-size: 60px;
+            justify-content: center;
+        }
+
+        /* Styling the popup background overlay */
+        .popup-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            z-index: 2;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styling the popup content . */
+        .popup {
+            position: relative;
+            z-index: 3;
+            max-width: 400px;
+            width: 100%;
+            background: #cedc89;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styling the close button .*/
+        .popup .uil-times {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #888;
+            cursor: pointer;
+            transition: transform 0.2s ease; /*use of smooth transform effect */
+        }
+
+        .popup .uil-times:hover {
+            transform: scale(1.2);
+        }
+
+        /* Styling the form elements .*/
+        .content form .row label {
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .content form :where(input, textarea) {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            font-size: 17px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #94165e;
+            margin-bottom: 15px;
+        }
+
+        /* Style the "Add Note" button inside the popup */
+        .content form button {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            color: #de6060;
+            font-size: 17px;
+            background: #48d873; /* Blue color for button background */
+            cursor: pointer;
+            transition: background-color 0.2s ease; /* Add a smooth background color change on hover */
+        }
+
+        .content form button:hover {
+            background: #2bbb39; /* Darker blue color on hover */
+        }
+
+        /* Style the delete confirmation dialog */
+        .confirmation-dialog {
+            background: #afd224;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .confirmation-dialog h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-dialog button {
+            width: 100px;
+            height: 40px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: #f44336; 
+            color: #45bcd1;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.2s ease; 
+        }
+
+
+        .confirmation-dialog button:hover {
+            background: #d32f2f;
+        }
+
+
+
+
+        /* Styling the heading */
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primaryColor);
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
+
+
+        body {
+            background: #da9545;
+            box-shadow: 0px 2px 10px rgba(0,0,0,5); 
+        }
     </style>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Note Taking</title>
 </head>
 
 <body>
+    <h1 class="heading">Add your notes here</h1>
     <div class="popup-box">
         <div class="popup">
             <div class="content">
@@ -247,6 +403,61 @@
             titleEl.focus();
             popupBox.classList.add('show')
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const addBox = document.querySelector('.add-box');
+            const titleEl = document.querySelector('input');
+            const descriptionEl = document.querySelector('textarea');
+            const popupBox = document.querySelector('.popup-box');
+            const noteList = document.querySelector('.wrapper');
+        
+            // Here is function to add a new note.
+            function addNote() {
+                const title = titleEl.value.trim();
+                const description = descriptionEl.value.trim();
+            
+                if (title !== "") {
+                    const note = document.createElement('li');
+                    note.innerHTML = `
+                        <div class="note">
+                            <p>${title}</p>
+                            <span>${description}</span>
+                        </div>
+                        <div class="bottom-content">
+                            <span>Date: ${new Date().toLocaleDateString()}</span>
+                            <div class="settings">
+                                <i class="uil uil-pen" onclick="editNote(this)"></i>
+                                <i class="uil uil-trash-alt" onclick="removeNote(this)"></i>
+                            </div>
+                        </div>
+                    `;
+                    
+                    noteList.appendChild(note);
+                    titleEl.value = "";
+                    descriptionEl.value = "";
+                    popupBox.classList.remove('show');
+                }
+            }
+
+        // Event listeners
+        addBox.addEventListener('click', () => {
+            titleEl.focus();
+            popupBox.classList.add('show');
+        });
+
+        const addButton = document.querySelector('.content form button');
+        addButton.addEventListener('click', addNote);
+        });
+
+        // Function to close the popup .
+        function closePopup() {
+            const popupBox = document.querySelector('.popup-box');
+            popupBox.classList.remove('show');
+        }
+
+        // Event listener for the close button .
+        const closeButton = document.querySelector('.uil-times');
+        closeButton.addEventListener('click', closePopup);
     </script>
 
 </body>

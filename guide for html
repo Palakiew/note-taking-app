@@ -1,0 +1,106 @@
+
+What is HTML?
+
+HTML, short for HyperText Markup Language, is the core language of the World Wide Web. It defines the content and basic structure of web pages and web applications.
+
+First published by Tim Berners-Lee in 1989, HTML is now used by 94% of all websites, and probably all the ones you visit. But what is it, exactly?
+As mentioned above, HTML is an acronym for “HyperText Markup Language.” Let’s break this down to better understand what HTML actually means.
+
+“HyperText” is text on a web page that contains references to another web page. You probably know these as hyperlinks. We use hyperlinks to jump to another section of the same page, a different page on the current website, or a completely new website. Hyperlinks can also open a PDF, email, or multimedia, like a video or audio file.
+
+Linking information together in this way was a revolutionary step in building the web. Together, HTML and the internet make it possible for anyone to access all types of information around the world, in any order they want.
+
+Moving on, “Markup” refers to how HTML “marks up” the page with annotations within the HTML file. These annotations are not displayed on the web page itself. Instead, they work behind-the-scenes telling the browser how to display the document to visitors. We'll learn more about this markup soon.
+
+Finally, “Language” is the simplest part of the acronym to understand. Like any language, HTML has a unique syntax and alphabet. But what kind of language is it, exactly? Let’s tackle this question next.
+Is HTML a programming language?
+
+Whether HTML is or is not technically a “programming” language is an ongoing debate among web developers and experts. While the majority defines HTML as a “markup” language (not a programming language) some argue the two aren’t mutually exclusive.
+
+All programming languages have some functional purpose — they need to “do” something, whether it be evaluating expressions, declaring variables, or modifying data. JavaScript is the most widely-used programming language in web development. Other popular programming languages include Python, Java, and C.
+
+Though it’s very useful as we’ll see, HTML doesn’t really “do” anything in this sense. It simply gives browsers the content it needs to display. HTML doesn’t care how the browser goes about displaying the content, as long as it’s displayed. In other words, HTML has a structural purpose, not a functional one.
+
+Still, some developers use this same logic to argue that HTML is a programming language — it’s just a declarative programming language. According to Professor David Brailsford from the University of Nottingham, declarative languages are more restricted than other languages, but that doesn’t make them any less of a programming language. You can see his full argument in this video.
+
+With that in mind, let’s move on to what HTML is used for.
+What is HTML used for?
+
+HTML is primarily used for creating web pages. HTML is free to use and ensures your text, images, and other elements are displayed as intended.
+
+With HTML, not only can you add headings, paragraphs, lists, and other elements to your page — you can also embed images, videos, audio files, and other multimedia. And, you can link to other web pages on the same website or from another site. This allows visitors to easily navigate your website and jump between websites.
+
+Even after adding headings, images, and hyperlinks, you’d still have a very basic web page — and that’s by design. HTML is purely for the content of a page. It creates a simple base upon which you can add styling with another language called CSS (which stands for Cascading Style Sheets). With CSS, you can customize your styling and layouts, changing the color, font, and alignment of elements.
+
+HTML is used to create things other than web pages, too. You can use it to:
+
+    make tables for organizing data
+    create forms for collecting user information, processing transactions, making reservations, or placing an order
+    create emails with HTML
+
+Whether you want to create web pages, tables, forms, or emails, you'll need to know how to write HTML. So, let’s break down the process next.
+How to Write HTML
+
+Compared to other coding languages, HTML is relatively easy to read and understand, since it’s essentially plain English text with extra symbols here and there.
+
+The main building block of an HTML web page is an element. An HTML element is a unit of information that tells the web browser what to render for the viewer. An HTML element could be a piece of text like a paragraph, an interactive item like a button, or a section of the page like a header or footer.
+
+Here’s what a basic element looks like written out in HTML. This element is called the <button> element, and creates a button on the screen that users can click with the mouse.
+
+HTML Element diagram
+
+Let's take a closer look at each component of an HTML element.
+HTML Tags
+
+HTML elements are designated by tags. Most elements have an opening tag and a closing tag. Opening tags precede contain the element name enclosed by angle brackets (<>). Closing tags are identical to opening tags, save for a slash (/) that precedes the element name.
+
+Tags contain an element’s content. Content may be text, a media item, or even other elements.
+
+So, say you want to add a paragraph to your web page, the the paragraph contains the text “This is a paragraph.” You’ll wrap it with the HTML paragraph tags <p> and </p>. So, the HTML will look like this:
+
+ 
+
+<p>This is a paragraph.</p> 
+
+Simple as that. Together, these three things are all you need make a paragraph element in HTML.
+
+Most HTML elements have an opening tag, a closing tag, and content in between these tags. However, some HTML elements only have an opening tag — these are called empty elements.
+
+The line break element is a common empty element. To add a line break in HTML, you just need to write <br> (for “break”), and a line break will be added.
+
+Also, element names are case-insensitive, meaning they can be written in uppercase or lowercase. For example, the <p> tag can also be written as <P>. However, you’ll almost always see element names written in lowercase.
+HTML Attributes
+
+While all HTML elements need tags, only some require attributes. An HTML attribute is text inside of the opening tag that provides additional information about the HTML element.
+
+An attribute is always found in the opening tag of an HTML element. Most have the syntax name=“value”, though some attributes only require you to write the name without any assigned value. 
+
+Some elements require certain attributes. For example, an HTML image element (<img>) must always contain a source attribute (src) whose value is the image URL or file path. Otherwise, the browser will not know what image to render. 
+
+Similarly, the anchor element (<a>), which creates a hyperlink, must contain an href attribute with a value that specifies the link’s destination. Otherwise, if a visitor clicks on the anchor element, the browser won’t send them anywhere.
+
+Other elements have attributes that aren’t essential to include, but are considered a good practice. For example, the <img> element also takes the alt attribute, which contains image alt text. The browser will still render the image if the alt attribute is not present in the <img> tag. But, readers with low vision might have trouble understanding what the image conveys without an alternative text description. So, it’s recommended that all non-decorative images have alt text and therefore use the alt attribute.
+
+Attributes can be written in any order inside the opening tag. However, you cannot put multiple instances of the same attribute inside the same HTML tag.
+How to Use HTML
+
+To start using HTML, you’ll need a text editor. A text editor is a software program for writing code. Since an HTML file is in standard text format, any basic text editor will work for this tutorial.
+
+Your first step will be to download a free text editor to use. Notepad++ is a good free text editor for Windows, and Sublime Text is a popular option for Mac. Usually, you can search the text editor online and download a zip file from the download page. Open the zip file, follow any instructions given to install the program, and open it.
+
+When you open the text editor, you’ll likely see an editor window like the one below. This is where you’ll write your HTML code.
+
+how to use html
+
+With this editor window open, copy the HTML code below and paste it into the window.
+
+ 
+
+ <!DOCTYPE html>
+<html>
+    <body>
+        <h1>My First Heading</h1>
+        <p>My first paragraph.</p>
+    </body>
+</html>
+
